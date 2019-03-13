@@ -185,7 +185,25 @@ const search = class {
     };
 
     getWhatItDo() {
-        
+       var response = "";
+       fs.readFile('random.txt', 'utf-8', function(err,txt) {
+            if (err)
+                console.log(err);
+            else {
+                var itIsWhatItISMang = 'do-what-it-says';
+                res = txt.split(',');
+                command = res[0];
+                var temp = "";
+                if (command != itIsWhatItISMang) {
+                    temp = res[1];
+                    // ** CHECK THIS OUT ** //
+                    query = temp.replace(/['"]+/g, '');
+                    myCommands();
+                } else {
+                    console.log("that's null homie");
+                }
+            }
+       });
     }
 };
 
