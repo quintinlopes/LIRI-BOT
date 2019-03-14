@@ -105,9 +105,6 @@ const search = class {
                 console.log(result);
                 console.log();
 
-                // ** Log Command ... work around changing it **
-                search.txtCommand(result);
-
             }).catch(function (err) {
                 console.log(err)
             });
@@ -150,9 +147,6 @@ const search = class {
                 console.log(result);
                 console.log();
 
-                // ** Log Command ... work around changing it **
-                search.txtCommand(result);
-
             }).catch(function (err) {
                 console.log(err)
             });
@@ -177,8 +171,6 @@ const search = class {
             console.log(result);
             console.log();
 
-            // ** Log Command CHECK THIS OUT ** //
-            search.txtCommand(result);
         }).catch(function (err) {
             console.log(err);
         });
@@ -191,11 +183,11 @@ const search = class {
                 console.log(err);
             else {
                 var itIsWhatItISMang = 'do-what-it-says';
-                res = txt.split(',');
+                response = txt.split(',');
                 command = res[0];
                 var temp = "";
                 if (command != itIsWhatItISMang) {
-                    temp = res[1];
+                    temp = response[1];
                     // ** CHECK THIS OUT ** //
                     query = temp.replace(/['"]+/g, '');
                     myCommands();
@@ -206,6 +198,9 @@ const search = class {
        });
     }
 };
+
+new search(search);
+// myCommands();
 
 function myCommands(userCommand) {
 
@@ -224,10 +219,12 @@ function myCommands(userCommand) {
             break;
 
         case "do-what-it-says":
-            search.getWhatItDo(inputPara);
+            search.getWhatItDo();
             break;
         }
     } else {
         console.log("Not a valid command")
     }
 };
+
+myCommands();
