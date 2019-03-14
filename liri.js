@@ -114,7 +114,7 @@ const search = class {
 
             // ****** CHECK THE IF YOU MIGHT NOT NEED THIS **** //
         } else {
-            // Pretty much the same thing but with a set movie 
+            // Pretty much the same thing but with a set movie (I chose Deadpool instead of MR. Nobody cause it's more fun)
             movie = 'Deadpool';
             var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&tomatoes=true&apikey=" + omdbID;
             axios.get(queryUrl).then(function (response) {
